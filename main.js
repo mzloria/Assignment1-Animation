@@ -42,23 +42,6 @@ Animation.prototype.isDone = function () {
     return (this.elapsedTime >= this.totalTime);
 }
 
-// no inheritance
-function Background(game, spritesheet) {
-    this.x = 0;
-    this.y = 0;
-    this.spritesheet = spritesheet;
-    this.game = game;
-    this.ctx = game.ctx;
-};
-
-Background.prototype.draw = function () {
-    this.ctx.drawImage(this.spritesheet,
-                   this.x, this.y);
-};
-
-Background.prototype.update = function () {
-};
-
 function ColaDrinkLookRight(game, xOffset) {
     this.animation = new Animation(AM.getAsset("./img/colaFlip.png"), 499, 35, -65, 65, 4, 0.10, 4, true, 1);
     this.animationDead = new Animation(AM.getAsset("./img/cola.png"), 0, 341, 70, 65, 5, 0.2, 5, true, 1);
